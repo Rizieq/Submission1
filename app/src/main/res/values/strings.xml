@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Submission1</string>
+
+    <string-array name="club_name">
+        <item>English Premier League</item>
+        <item>French Ligue 1</item>
+        <item>German Bundesliga</item>
+        <item>Italian Serie A</item>
+        <item>Spanish La Liga</item>
+    </string-array>
+
+    <array name="club_image">
+        <item>@drawable/english_premier_league</item>
+        <item>@drawable/french_ligue_1</item>
+        <item>@drawable/german_bundesliga</item>
+        <item>@drawable/italian_serie_a</item>
+        <item>@drawable/spanish_la_liga</item>
+    </array>
+
+    <string-array name="club_detail">
+        <item>The Premier League (often referred to as the English Premier League (EPL) outside England), is the top level of the English football league system. Contested by 20 clubs, it operates on a system of promotion and relegation with the English Football League (EFL).</item>
+        <item>Ligue 1 (French pronunciation: ​ League 1, formerly known as Division 1), is the French professional league for association football clubs. It is the countrys primary football competition and serves as the top division of the French football league system. </item>
+        <item>The Futball-Bundesliga (English: Football Federal League), commonly known as the Bundesliga, is a professional association football league in Germany and the football league with the highest average stadium attendance worldwide. At the top of the German football league system, the Bundesliga is Germanys primary football competition. </item>
+        <item>Serie A, also called Serie A TIM due to sponsorship by Telecom Italia, is a professional league competition for football clubs located at the top of the Italian football league system and has been operating for over eighty years since the 1929–30 season. It had been organized by Lega Calcio until 2010, but a new league, the Lega Serie A, was created for the 2010–11 season. </item>
+        <item>The Primera División, commonly known as La Liga and as La Liga Santander for sponsorship reasons, is the top professional association football division of the Spanish football league system. </item>
+
+    </string-array>
+</resources>

@@ -19,6 +19,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var rvMain: RecyclerView
 
 
+    companion object{
+        const val INTENT_TO_DETAIL = "detail"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +36,9 @@ class MainActivity : AppCompatActivity() {
         initData()
 
         rvMain.layoutManager = LinearLayoutManager(this)
-        rvMain.adapter = AdapterLiga(this,data)
+        rvMain.adapter = AdapterLiga(this,data){
+            startActivity<DetailActivity>(INTENT_TO_DETAIL to it)
+        }
 
 
 

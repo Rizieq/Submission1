@@ -1,31 +1,25 @@
 package com.rizieq.submission1
 
 import android.graphics.Typeface
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
-import android.view.View
 import android.widget.ImageView
-import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.core.view.marginBottom
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.rizieq.submission1.MainActivity.ListItemUI.Companion.idImage
-import com.rizieq.submission1.MainActivity.ListItemUI.Companion.idName
+import com.rizieq.submission1.MainActivity.Companion.INTENT_TO_DETAIL
 import org.jetbrains.anko.*
 
 class DetailActivity : AppCompatActivity() {
 
-    companion object{
-        const val INTENT_TO_DETAIL = "detail"
-    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 
 
-        val dataModel : Data = intent.getParcelableExtra(INTENT_TO_DETAIL)
+        val dataModel : Data = intent.getParcelableExtra(INTENT_TO_DETAIL) as Data
         DetailUI(dataModel).setContentView(this)
 
 
@@ -37,7 +31,7 @@ class DetailActivity : AppCompatActivity() {
 
         var idImg: Int = 1
         val idTitle = 2
-        val idTvDetail = 3
+
 
 
         override fun createView(ui: AnkoContext<DetailActivity>) = with(ui) {

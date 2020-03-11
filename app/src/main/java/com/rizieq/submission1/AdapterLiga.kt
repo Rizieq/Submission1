@@ -1,5 +1,6 @@
 package com.rizieq.submission1
 
+import android.content.ClipData
 import android.content.Context
 import android.content.Intent
 import android.view.View
@@ -13,7 +14,7 @@ import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
-class AdapterLiga(private var context: Context, private val data: List<Data>) :
+class AdapterLiga(private var context: Context, private val data: List<Data>,val listener: (Data) -> Unit) :
     RecyclerView.Adapter<AdapterLiga.ViewHolder>() {
 
 
@@ -32,13 +33,13 @@ class AdapterLiga(private var context: Context, private val data: List<Data>) :
     override fun getItemCount(): Int = data.size
 
     override fun onBindViewHolder(holder: AdapterLiga.ViewHolder, position: Int) {
-        holder.bindItems(data[position])
+        holder.bindItems(data[position], listener)
     }
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         private val tvHome = view.findViewById<TextView>(MainActivity.ListItemUI.idName)
         private val imgHome = view.findViewById<ImageView>(MainActivity.ListItemUI.idImage)
-        fun bindItems(data: Data) {
+        fun bindItems(data: Data, listener: (Data) -> Unit) {
 
             tvHome.text = data.name
             Glide.with(itemView.context)
@@ -46,9 +47,10 @@ class AdapterLiga(private var context: Context, private val data: List<Data>) :
                 .into(imgHome)
 
             itemView.setOnClickListener {
-                val intent = Intent(itemView.context, DetailActivity::class.java)
-                intent.putExtra(DetailActivity.INTENT_TO_DETAIL,data)
-                itemView.context.startActivity(intent)
+                listener(data)
+//                val intent = Intent(itemView.context, DetailActivity::class.java)
+//                intent.putExtra(DetailActivity.INTENT_TO_DETAIL,data)
+//                itemView.context.startActivity(intent)
 
             }
 
